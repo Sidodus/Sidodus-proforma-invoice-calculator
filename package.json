@@ -2,6 +2,7 @@
   "name": "proforma-invoice-calculator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sidodus.github.io/Sidodus-proforma-invoice-calculator/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -9,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.0",
