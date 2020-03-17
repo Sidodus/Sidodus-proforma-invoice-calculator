@@ -1,0 +1,20 @@
+.nigeriaCurrencyImage {
+  background-image: url(./components/img/nigerianFlag.jpg);
+  background-size: 100%;
+}
+
+.nigeriaCurrencyImageBlur {
+  background-image: url(./components/img/nigerianFlag.jpg);
+  background-size: 100%;
+  opacity: 0.5;
+}
+
+.usaCurrencyImage {
+  background-image: url(./components/img/usFlag.png);
+  background-size: 100% 100%;
+}
+
+.usaCurrencyImage2 {
+  background-image: url(./components/img/usFlag.png);
+  background-size: cover;
+}
