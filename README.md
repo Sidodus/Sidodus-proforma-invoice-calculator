@@ -13,7 +13,7 @@
 - \*). Applicatiion Is Optimised With Nigerian Naira (₦) & US Dollar (\$)
 - \*). Users Can Also Set An Exchange Rate Value Btween NGN & USD
 
-See Proforma Invoice Calculator At Work Here [Advance Task Manager](https://sidodus.github.io/proforma-invoice-calculator/)
+See Proforma Invoice Calculator At Work Here [Proforma Invoice Calculator](https://sidodus.github.io/Sidodus-proforma-invoice-calculator/)
 
 Created With React.js & Redux State Management:
 
