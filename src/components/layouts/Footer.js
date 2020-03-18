@@ -12,7 +12,8 @@ class Footer extends Component {
           color: "gray",
           textAlign: "center",
           marginTop: "58px",
-          marginBottom: "25px"
+          marginBottom: "7px",
+          paddingBottom: "7px"
         }}
       >
         {" "}
@@ -24,22 +25,14 @@ class Footer extends Component {
             ? thisYear + " - " + presentYear
             : null}{" "}
         </span>{" "}
-        by Saheed Odulaja <hr />
+        by Saheed Odulaja <br />
         <div>
           <Link
-            to="https://github.com/Sidodus/proforma-invoice-calculator"
+            to="https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/"
             className="text-secondary"
           >
             Get Source Code From:
-            https://github.com/Sidodus/proforma-invoice-calculator
-          </Link>
-        </div>
-        <div>
-          <Link
-            to="https://sidodus.github.io/proforma-invoice-calculator"
-            className="text-secondary"
-          >
-            Use Online: @ https://sidodus.github.io/proforma-invoice-calculator
+            https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/
           </Link>
         </div>
       </footer>

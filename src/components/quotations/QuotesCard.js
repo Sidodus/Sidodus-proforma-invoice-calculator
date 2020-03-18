@@ -389,7 +389,7 @@ class QuotesCard extends Component {
                 <td className="text-success">
                   PROFIT
                   <small className="text-secondary">
-                    (after tax)
+                    (after vat)
                     <small>
                       {Number(serviceCharge) === 0
                         ? null
@@ -429,7 +429,7 @@ class QuotesCard extends Component {
                 <option value="1000">Display Price Per 1,000 units</option>
                 <option value="101">Display TOTAL (VAT inc.)</option>
                 <option value="102">
-                  PROFIT(after tax [
+                  PROFIT(after vat [
                   {vat0.displayNum + "." + vat1.displayNum + "%"}])
                 </option>
               </select>

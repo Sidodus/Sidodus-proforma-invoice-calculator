@@ -253,6 +253,7 @@ class Form extends React.Component {
           <input
             type="number"
             name="itemUnit"
+            className="form-control"
             placeholder={placeholder4}
             value={itemUnit}
             onChange={this.valueChanged}
