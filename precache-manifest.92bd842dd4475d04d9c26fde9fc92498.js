@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a3f98be6744bdc6e8ba20a0cc2afea3e",
+    "revision": "68a398c2fa43aca6d1a2331e899afe46",
     "url": "/Sidodus-proforma-invoice-calculator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sidodus-proforma-invoice-calculator/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "f8cc7bc41204d01f72bb",
+    "revision": "1d31791a0c3095100f37",
     "url": "/Sidodus-proforma-invoice-calculator/static/css/main.ac1f37c6.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sidodus-proforma-invoice-calculator/static/js/2.cf331e7e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f8cc7bc41204d01f72bb",
-    "url": "/Sidodus-proforma-invoice-calculator/static/js/main.b7c74556.chunk.js"
+    "revision": "1d31791a0c3095100f37",
+    "url": "/Sidodus-proforma-invoice-calculator/static/js/main.7d0dd85a.chunk.js"
   },
   {
     "revision": "300ed8f4c9773b202d41",
