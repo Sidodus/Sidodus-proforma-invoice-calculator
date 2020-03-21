@@ -105,120 +105,143 @@ class QuotesForm extends Component {
       exchangedDollar
     } = this.state;
     return (
-      <div
-        className="container-fluid pt-5 pb-3 px-5 mb-1"
-        // Main Background Styling
-        style={{
-          backgroundImage:
-            "linear-gradient(lightgray 2%, white 5%, gray 15%, lightgray 60%)",
-          transform: "rotate(180deg)"
-        }}
-      >
+      <div>
         <div
-          className="row"
-          // Inner Background Styling
           style={{
             backgroundImage:
-              "linear-gradient(lightgray 1%, white 30%, rgb(187, 202, 131) 100%)",
-            transform: "rotate(180deg)",
-            paddingBottom: "10px",
-            boxShadow: "0px 2px 4px rgba(0, 0, 0, .5)"
+              "linear-gradient(lightgray 5%, white 12%,gray 5%,  lightgray 60%)",
+            // "linear-gradient(lightgray 2%, white 5%, gray 15%, lightgray 60%)",
+            transform: "rotate(180deg)"
           }}
         >
-          <div className="col-sm-7">
-            <h4 className="text-center text-secondary">
-              <i className="fa fa-align-center fa-sm" /> STEP 1
-            </h4>
-            <div>
-              <label>
-                <b>Enter Quotation Details...</b>
-              </label>
-              {toggle1 ? (
-                <form
-                  onSubmit={this.submitExchangeRate}
-                  id="form2"
-                  className="input-group mb-3"
+          <br />
+        </div>
+        <div
+          className="container-fluid pt-3 pb-3 px-5 mb-1"
+          // Main Background Styling
+          style={{
+            backgroundImage:
+              "linear-gradient(lightgray 2%, gray 15%, lightgray 90%)",
+            transform: "rotate(180deg)"
+          }}
+        >
+          <div
+            className="row"
+            // Inner Background Styling
+            style={{
+              backgroundImage:
+                "linear-gradient(lightgray 1%, white 30%, rgb(187, 202, 131) 100%)",
+              transform: "rotate(180deg)",
+              paddingBottom: "10px",
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, .5)"
+            }}
+          >
+            <div className="col-sm-7">
+              <h4 className="text-center text-secondary">
+                <i className="fa fa-align-center fa-sm" /> STEP 1
+              </h4>
+              <div>
+                <label>
+                  <b>Enter Quotation Details...</b>
+                </label>
+                {toggle1 ? (
+                  <form
+                    onSubmit={this.submitExchangeRate}
+                    id="form2"
+                    className="input-group mb-3"
+                    style={boxShadows}
+                  >
+                    <div className="input-group-append">
+                      <span className="input-group-text bg-dark text-white">
+                        ₦{exchangedNaira}
+                      </span>
+                    </div>
+                    <input
+                      type="number"
+                      name="naira"
+                      className="form-control"
+                      placeholder="Nigerian Naira (NGN)"
+                      value={naira}
+                      onChange={this.valueChanged}
+                    />
+                    <button className="btn btn-sm btn-info" style={boxShadows}>
+                      SET EXCHANGE RATE
+                    </button>
+                    <input
+                      type="number"
+                      name="dollar"
+                      className="form-control"
+                      placeholder="US Dollar (USD)"
+                      value={dollar}
+                      onChange={this.valueChanged}
+                    />
+                    <div className="input-group-append">
+                      <span className="input-group-text bg-dark text-white">
+                        ${exchangedDollar}
+                      </span>
+                    </div>
+                  </form>
+                ) : null}
+                <div
+                  onClick={this.toggle1}
+                  id="setExchangeRateBtn"
+                  className="btn btn-outline-primary btn-sm float-right mb-2"
                   style={boxShadows}
                 >
-                  <div className="input-group-append">
-                    <span className="input-group-text bg-dark text-white">
-                      ₦{exchangedNaira}
-                    </span>
-                  </div>
-                  <input
-                    type="number"
-                    name="naira"
-                    className="form-control"
-                    placeholder="Nigerian Naira (NGN)"
-                    value={naira}
-                    onChange={this.valueChanged}
-                  />
-                  <button className="btn btn-sm btn-info" style={boxShadows}>
-                    SET EXCHANGE RATE
-                  </button>
-                  <input
-                    type="number"
-                    name="dollar"
-                    className="form-control"
-                    placeholder="US Dollar (USD)"
-                    value={dollar}
-                    onChange={this.valueChanged}
-                  />
-                  <div className="input-group-append">
-                    <span className="input-group-text bg-dark text-white">
-                      ${exchangedDollar}
-                    </span>
-                  </div>
-                </form>
-              ) : null}
-              <div
-                onClick={this.toggle1}
-                id="setExchangeRateBtn"
-                className="btn btn-outline-primary btn-sm float-right mb-2"
-                style={boxShadows}
-              >
-                Set Exchange Rate
+                  Set Exchange Rate
+                </div>
               </div>
+              <Form
+                placeholder1="e.g. Graphics Design"
+                inputGroupText1="Item Name"
+                placeholder2="e.g. Designing Flyer Artwork Based On Spec"
+                inputGroupText2="Desccription"
+                placeholder4="(1 Unit is the default value)"
+                inputGroupText4="Item Unit"
+              />
             </div>
-            <Form
-              placeholder1="e.g. Graphics Design"
-              inputGroupText1="Item Name"
-              placeholder2="e.g. Designing Flyer Artwork Based On Spec"
-              inputGroupText2="Desccription"
-              placeholder4="(1 Unit is the default value)"
-              inputGroupText4="Item Unit"
-            />
+            <div className="col-sm-5 mt-4 pt-2">
+              <h4 className="text-center text-secondary">
+                <i className="fa fa-align-center fa-sm" /> STEP 2
+              </h4>
+              <button
+                id="generateInvoice"
+                className={classnames("btn form-control", {
+                  "btn-secondary": !this.state.toggle2,
+                  "btn-outline-success": this.state.toggle2
+                })}
+                style={boxShadows}
+                onClick={this.toggle2}
+              >
+                Generate Invoice
+              </button>
+              {toggle2 ? (
+                <div className="mt-1 col-sm-12">
+                  <Form2
+                    placeholder1="% (0 is the default value)"
+                    inputGroupText1="VAT"
+                    placeholder2="e.g. 25%"
+                    inputGroupText2="Service Charge (in %)"
+                    placeholder3="Total Job (Unit Number)"
+                    inputGroupText3="(000s)"
+                    placeholder4="Job Name"
+                    inputGroupText4="LPO Item Name"
+                  />
+                </div>
+              ) : null}
+            </div>
           </div>
-          <div className="col-sm-5 mt-4 pt-2">
-            <h4 className="text-center text-secondary">
-              <i className="fa fa-align-center fa-sm" /> STEP 2
-            </h4>
-            <button
-              id="generateInvoice"
-              className={classnames("btn form-control", {
-                "btn-secondary": !this.state.toggle2,
-                "btn-outline-success": this.state.toggle2
-              })}
-              style={boxShadows}
-              onClick={this.toggle2}
-            >
-              Generate Invoice
-            </button>
-            {toggle2 ? (
-              <div className="mt-1 col-sm-12">
-                <Form2
-                  placeholder1="% (0 is the default value)"
-                  inputGroupText1="VAT"
-                  placeholder2="e.g. 25%"
-                  inputGroupText2="Service Charge (in %)"
-                  placeholder3="Total Job (Unit Number)"
-                  inputGroupText3="(000s)"
-                  placeholder4="Job Name"
-                  inputGroupText4="LPO Item Name"
-                />
-              </div>
-            ) : null}
-          </div>
+        </div>
+        <div
+          style={{
+            backgroundImage:
+              // "linear-gradient(lightgray 2%, white 5%, gray 15%, lightgray 60%)",
+              "linear-gradient(lightgray 5%, white 12%,gray 5%,  lightgray 60%)",
+            marginTop: "-2px",
+            marginBottom: "7px"
+          }}
+        >
+          <br />
         </div>
       </div>
     );
