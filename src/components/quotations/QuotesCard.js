@@ -202,6 +202,7 @@ class QuotesCard extends Component {
       this.props.addProformaInvoice(nullInvoice);
 
       document.getElementById("clearInvoice").style.display = "none";
+      document.getElementById("recaculateInvoice").style.display = "none";
     }
   };
 
@@ -219,23 +220,28 @@ class QuotesCard extends Component {
 
     // Only Run If There Are Expences
     if (quotations.length !== 0) {
-      const totalQuoteAmount = quotations
-        .map(quotation => Number(quotation.itemUnit * quotation.itemPrice))
-        .reduce((acc, value) => acc + value);
+      // Only Run If There Is An Invoice
+      if (serviceCharge !== 0) {
+        const totalQuoteAmount = quotations
+          .map(quotation => Number(quotation.itemUnit * quotation.itemPrice))
+          .reduce((acc, value) => acc + value);
 
-      const proformaInvioce = {
-        totalQuoteAmount: Number(totalQuoteAmount),
-        lpoItemName,
-        totalJobUnit: Number(totalJobUnit),
-        serviceCharge: Number(serviceCharge),
-        vat: Number(vat)
-      };
+        const proformaInvioce = {
+          totalQuoteAmount: Number(totalQuoteAmount),
+          lpoItemName,
+          totalJobUnit: Number(totalJobUnit),
+          serviceCharge: Number(serviceCharge),
+          vat: Number(vat)
+        };
 
-      this.props.addProformaInvoice(proformaInvioce);
+        this.props.addProformaInvoice(proformaInvioce);
 
-      // Show Clear Invoice & Recaculate BTN
-      document.getElementById("clearInvoice").style.display = "block";
-      document.getElementById("recaculateInvoice").style.display = "block";
+        // Show Clear Invoice & Recaculate BTN
+        document.getElementById("clearInvoice").style.display = "block";
+        document.getElementById("recaculateInvoice").style.display = "block";
+      } else {
+        alert("You  Must Fill In Invoice Details In (STEP 2)");
+      }
     } else {
       alert("You  Must Enter At Least 1 Expense In (STEP 1)");
     }
@@ -389,7 +395,7 @@ class QuotesCard extends Component {
                 <td className="text-success">
                   PROFIT
                   <small className="text-secondary">
-                    (after vat)
+                    (after VAT)
                     <small>
                       {Number(serviceCharge) === 0
                         ? null
@@ -429,7 +435,7 @@ class QuotesCard extends Component {
                 <option value="1000">Display Price Per 1,000 units</option>
                 <option value="101">Display TOTAL (VAT inc.)</option>
                 <option value="102">
-                  PROFIT(after vat [
+                  PROFIT(after VAT [
                   {vat0.displayNum + "." + vat1.displayNum + "%"}])
                 </option>
               </select>

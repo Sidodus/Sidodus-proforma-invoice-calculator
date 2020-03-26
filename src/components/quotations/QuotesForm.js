@@ -7,6 +7,7 @@ import Form from "./Form";
 import Form2 from "./Form2";
 
 import classnames from "classnames";
+import { getStorageQuotations } from "../../actions/quotationStorageAction";
 
 class QuotesForm extends Component {
   state = {
@@ -60,38 +61,45 @@ class QuotesForm extends Component {
   submitExchangeRate = e => {
     e.preventDefault();
 
-    let { naira, dollar } = this.state;
+    const quotations = getStorageQuotations();
 
-    // Set itemUnit Default Value
-    if (Number(naira) === Number(dollar)) {
-      alert("New Corresponding Exchange Rate Values Must be different");
-    } else if (Number(naira) < Number(dollar)) {
-      alert("(@ the moment) Naira Value Cant Be Less Than Dollar Value");
-    } else if (Number(naira) === 0 || Number(dollar) === 0) {
-      alert("New Exchange Rate Must Have A Corresponding Value");
-    } else {
-      const exchangeRate = {
-        naira,
-        dollar
-      };
+    // Prevent Changing Of Exchange Rate Value Once En Expence Has Been Added
+    if (quotations.length === 0) {
+      let { naira, dollar } = this.state;
 
-      // Get Proforma Length
-      if (JSON.parse(localStorage.getItem("quotations")).length !== 0) {
-        // click the init Currency
-        const initCurrency = JSON.parse(localStorage.getItem("initCurrency"));
-
-        if (initCurrency === "Dollar") {
-          document.getElementById("usaCurr").click();
-        } else if (initCurrency === "Naira") {
-          document.getElementById("nigCurr").click();
-        }
-
-        this.props.addExchangeRate(exchangeRate);
-        this.setState({ naira: "", dollar: "" });
+      // Set itemUnit Default Value
+      if (Number(naira) === Number(dollar)) {
+        alert("New Corresponding Exchange Rate Values Must be different");
+      } else if (Number(naira) < Number(dollar)) {
+        alert("(@ the moment) Naira Value Cant Be Less Than Dollar Value");
+      } else if (Number(naira) === 0 || Number(dollar) === 0) {
+        alert("New Exchange Rate Must Have A Corresponding Value");
       } else {
-        this.props.addExchangeRate(exchangeRate);
-        this.setState({ naira: "", dollar: "" });
+        const exchangeRate = {
+          naira,
+          dollar
+        };
+
+        // Get Proforma Length
+        if (JSON.parse(localStorage.getItem("quotations")).length !== 0) {
+          // click the init Currency
+          const initCurrency = JSON.parse(localStorage.getItem("initCurrency"));
+
+          if (initCurrency === "Dollar") {
+            document.getElementById("usaCurr").click();
+          } else if (initCurrency === "Naira") {
+            document.getElementById("nigCurr").click();
+          }
+
+          this.props.addExchangeRate(exchangeRate);
+          this.setState({ naira: "", dollar: "" });
+        } else {
+          this.props.addExchangeRate(exchangeRate);
+          this.setState({ naira: "", dollar: "" });
+        }
       }
+    } else {
+      alert("You Can't Change The Exchange Rate Once You Enter An Expense");
     }
   };
 
