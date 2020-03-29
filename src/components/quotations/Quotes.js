@@ -52,17 +52,17 @@ class Quotes extends Component {
         const itemName = quotation.itemName;
         const itemDescription = quotation.itemDescription;
 
-        const itemUnit = Number(quotation.itemUnit).toFixed(2);
+        const itemUnit = Number(quotation.itemUnit).toFixed();
         const itemUnit0 = JSnumberToWordProcessor(String(itemUnit))[0];
         const itemUnit1 = JSnumberToWordProcessor(String(itemUnit))[1];
 
-        const itemPrice = Number(quotation.itemPrice).toFixed(2);
+        const itemPrice = Number(quotation.itemPrice).toFixed(5);
         const itemPrice0 = JSnumberToWordProcessor(String(itemPrice))[0];
         const itemPrice1 = JSnumberToWordProcessor(String(itemPrice))[1];
 
         const itemPriceTotal = Number(
           quotation.itemUnit * quotation.itemPrice
-        ).toFixed(2);
+        ).toFixed(5);
         const itemPriceTotal0 = JSnumberToWordProcessor(
           String(itemPriceTotal)
         )[0];
@@ -96,7 +96,7 @@ class Quotes extends Component {
           props.quotations
             .map(quotation => Number(quotation.itemUnit * quotation.itemPrice))
             .reduce((acc, value) => acc + value)
-        ).toFixed(2);
+        ).toFixed(5);
         totalPrice0 = JSnumberToWordProcessor(String(totalPrice))[0];
         totalPrice1 = JSnumberToWordProcessor(String(totalPrice))[1];
       }
@@ -214,12 +214,12 @@ class Quotes extends Component {
                 <td>
                   {storageCurrency.sign}
                   {quotation.itemPrice0.displayNum + "."}
-                  <small>{quotation.itemPrice1.displayNum}</small>{" "}
+                  <small>{quotation.itemPrice1.newDecimalNum}</small>{" "}
                 </td>
                 <td>
                   {storageCurrency.sign}
                   {quotation.itemPriceTotal0.displayNum + "."}
-                  <small>{quotation.itemPriceTotal1.displayNum}</small>{" "}
+                  <small>{quotation.itemPriceTotal1.newDecimalNum}</small>{" "}
                 </td>
                 <td>
                   <Link to={`/update/${quotation.itemId}`}>
@@ -246,13 +246,13 @@ class Quotes extends Component {
                 <td className="text-success">
                   {storageCurrency.sign}
                   {totalPrice0.displayNum + "."}
-                  <small>{totalPrice1.displayNum}</small>{" "}
+                  <small>{totalPrice1.newDecimalNum}</small>{" "}
                 </td>
               ) : (
                 <td className="text-danger">
                   {storageCurrency.sign}
                   {totalPrice0.displayNum + "."}
-                  <small>{totalPrice1.displayNum}</small>{" "}
+                  <small>{totalPrice1.newDecimalNum}</small>{" "}
                 </td>
               )}
             </tr>

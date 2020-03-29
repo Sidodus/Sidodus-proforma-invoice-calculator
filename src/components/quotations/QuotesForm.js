@@ -63,7 +63,7 @@ class QuotesForm extends Component {
 
     const quotations = getStorageQuotations();
 
-    // Prevent Changing Of Exchange Rate Value Once En Expence Has Been Added
+    // Prevent Changing Of Exchange Rate Value Once An Expence Has Been Added
     if (quotations.length === 0) {
       let { naira, dollar } = this.state;
 
@@ -71,7 +71,9 @@ class QuotesForm extends Component {
       if (Number(naira) === Number(dollar)) {
         alert("New Corresponding Exchange Rate Values Must be different");
       } else if (Number(naira) < Number(dollar)) {
-        alert("(@ the moment) Naira Value Cant Be Less Than Dollar Value");
+        alert(
+          "(AT THE MOMENT) Naira Exchange Rate Value Can't Be Less Than Dollar Exchange Rate Value"
+        );
       } else if (Number(naira) === 0 || Number(dollar) === 0) {
         alert("New Exchange Rate Must Have A Corresponding Value");
       } else {
@@ -118,7 +120,6 @@ class QuotesForm extends Component {
           style={{
             backgroundImage:
               "linear-gradient(lightgray 5%, white 12%,gray 5%,  lightgray 60%)",
-            // "linear-gradient(lightgray 2%, white 5%, gray 15%, lightgray 60%)",
             transform: "rotate(180deg)"
           }}
         >
@@ -243,7 +244,6 @@ class QuotesForm extends Component {
         <div
           style={{
             backgroundImage:
-              // "linear-gradient(lightgray 2%, white 5%, gray 15%, lightgray 60%)",
               "linear-gradient(lightgray 5%, white 12%,gray 5%,  lightgray 60%)",
             marginTop: "-2px",
             marginBottom: "7px"

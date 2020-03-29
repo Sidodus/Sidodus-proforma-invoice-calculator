@@ -6,6 +6,7 @@ import store from "./store";
 
 import QuotesHome from "./components/quotations/QuotesHome";
 import EditForm from "./components/quotations/EditForm";
+import NotFound from "./components/pages/NotFound";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
@@ -21,6 +22,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={QuotesHome} />
             <Route exact path="/update/:id" component={EditForm} />
+            <Route component={NotFound} />
           </Switch>
         </Router>
       </Provider>

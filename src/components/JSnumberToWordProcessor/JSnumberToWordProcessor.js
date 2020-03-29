@@ -3,6 +3,7 @@
  ** Feel Free To Fork The Repository as There Is Always Room For Improvement.
  ** Also Be Kind Enough To Leave A STAR As A Mark Of Encouragement :)
  ** Reposiitory @ https://github.com/Sidodus/JavaScript-Number-To-Word-Processor.
+ ** Edited To Suit proforma-invoice-caculator
  */
 
 export const JSnumberToWordProcessor = (function() {
@@ -11,10 +12,6 @@ export const JSnumberToWordProcessor = (function() {
     let processedData = "";
     let processedDataArray = [];
 
-    // if(num !== Number()){
-    //     console.log('num is not number')
-    //     return
-    // }
     // Process Number If Number Is An Array OR A Single Number
     if (Array.isArray(num)) {
       num.forEach(function(cur) {
@@ -26,8 +23,6 @@ export const JSnumberToWordProcessor = (function() {
         // Parse The Object Into An Array
         processedDataArray.push(processedData);
       });
-      //  eslint-disable-next-line no-undef
-      // } else if (num == BigInt(num)) {
     } else if (num) {
       curString = num.toString();
 
@@ -41,7 +36,9 @@ export const JSnumberToWordProcessor = (function() {
     // Number Processor(Format Number To A Readable Number & Call processCurString() To Process Number To Word)
     function numProcessor(curString) {
       let displayNum = 0;
+      let newDecimal = 0;
       let displayWord = "";
+      let newDecimalWord = "";
 
       if (curString.length > 18) {
         displayNum = curString.substr(0, curString.length);
@@ -246,9 +243,43 @@ export const JSnumberToWordProcessor = (function() {
         displayWord = processCurString(curString);
       }
 
+      // Rework Decimal To 2 Decimal Number
+      newDecimal = displayNum;
+
+      const newDisplayNum = newDecimal.split(",");
+
+      newDisplayNum.splice(1, 0, ".");
+
+      const newDisplayNumConcat = newDisplayNum[0].concat(
+        newDisplayNum[1],
+        newDisplayNum[2]
+      );
+
+      // Ensure 2 Decimal Place Even When It's '0'
+      let newDecimalNum = Number(newDisplayNumConcat).toFixed();
+      // eslint-disable-next-line eqeqeq
+      if (newDecimalNum == 0) {
+        newDecimalNum = "00";
+      }
+
+      // Ensure 2 Decimal Place
+      if (newDecimalNum.length === 1) {
+        newDecimalNum = newDecimalNum + "0";
+      }
+
+      // Ensure newDecimalNum !NaN
+      if (isNaN(newDecimalNum)) {
+        newDecimalNum = "00";
+      }
+
+      // Set 2 Decimal Place For Word
+      newDecimalWord = processCurString(newDecimalNum);
+
       return {
         displayNum,
-        displayWord
+        newDecimalNum,
+        displayWord,
+        newDecimalWord
       };
     } // END OF numProcessor()
 
@@ -1434,8 +1465,7 @@ export const JSnumberToWordProcessor = (function() {
 
       if (curStringSubStr !== 0) {
         let tense_Unit = Number(curString[1] + curString[2]);
-        processedWord =
-          curString_1 + " Hundred and " + wordNum(tense_Unit);
+        processedWord = curString_1 + " Hundred and " + wordNum(tense_Unit);
       } else {
         processedWord = curString_1 + " Hundred";
       }
@@ -1592,10 +1622,7 @@ export const JSnumberToWordProcessor = (function() {
   }; // END OF wordNum()
 
   return function(num) {
-    // console.log("NUM", num)
     let numSplit = String(num).split(".");
-    // console.log(Array.isArray(numSplit))
-    // console.log('NUM SPLIT', numSplit)
     return processNum(numSplit);
   }; // END OF process()
 })(); // END OF numberToWord

@@ -46,30 +46,34 @@ class EditForm extends React.Component {
 
     let { id, itemName, itemDescription, itemUnit, itemPrice } = this.state;
 
-    // Set itemUnit Default Value
-    if (itemUnit === "") {
-      itemUnit = "1";
+    if (isNaN(itemPrice)) {
+      alert("Enter A Valid Number As An Item Amount");
+    } else {
+      // Set itemUnit Default Value
+      if (itemUnit === "") {
+        itemUnit = "1";
+      }
+
+      const newQuotationItem = {
+        id,
+        itemName,
+        itemDescription,
+        itemUnit,
+        itemPrice
+      };
+
+      this.setState({
+        id: "",
+        itemName: "",
+        itemDescription: "",
+        itemUnit: "",
+        itemPrice: ""
+      });
+
+      this.props.updateQuotation(newQuotationItem);
+
+      this.props.history.push("/");
     }
-
-    const newQuotationItem = {
-      id,
-      itemName,
-      itemDescription,
-      itemUnit,
-      itemPrice
-    };
-
-    this.setState({
-      id: "",
-      itemName: "",
-      itemDescription: "",
-      itemUnit: "",
-      itemPrice: ""
-    });
-
-    this.props.updateQuotation(newQuotationItem);
-
-    this.props.history.push("/");
   };
 
   render() {
@@ -151,7 +155,7 @@ class EditForm extends React.Component {
                     </div>
                     <input
                       required
-                      type="number"
+                      type="text"
                       name="itemPrice"
                       className="form-control"
                       value={itemPrice}

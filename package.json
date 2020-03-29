@@ -1,6 +1,6 @@
 {
   "name": "proforma-invoice-calculator",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "homepage": "https://sidodus.github.io/Sidodus-proforma-invoice-calculator/",
   "dependencies": {

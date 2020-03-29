@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -27,13 +26,13 @@ class Footer extends Component {
         </span>{" "}
         by Saheed Odulaja <br />
         <div>
-          <Link
-            to="https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/"
+          Get Source Code From:{" "}
+          <a
+            href="https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/"
             className="text-secondary"
           >
-            Get Source Code From:
             https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/
-          </Link>
+          </a>
         </div>
       </footer>
     );

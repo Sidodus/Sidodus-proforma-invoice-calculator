@@ -43,29 +43,29 @@ export const calculateNairaStorageExchangeRate = exchangeRate => {
     itemPrice:
       JSnumberToWordProcessor(
         String(
-          Number(quotations.itemPrice).toFixed(2) *
-            Number(exchangeRate).toFixed(2)
+          Number(quotations.itemPrice).toFixed(5) *
+            Number(exchangeRate).toFixed(5)
         )
       ).length === 2
         ? JSnumberToWordProcessor(
             String(
-              Number(quotations.itemPrice).toFixed(2) *
-                Number(exchangeRate).toFixed(2)
+              Number(quotations.itemPrice).toFixed(5) *
+                Number(exchangeRate).toFixed(5)
             )
           )[0].displayNum +
           "." +
           JSnumberToWordProcessor(
             String(
               (
-                Number(quotations.itemPrice).toFixed(2) *
-                Number(exchangeRate).toFixed(2)
-              ).toFixed(2) // toFixed(2) here to format decimal
+                Number(quotations.itemPrice).toFixed(5) *
+                Number(exchangeRate).toFixed(5)
+              ).toFixed(5) // toFixed(2) here to format decimal
             )
           )[1].displayNum
         : JSnumberToWordProcessor(
             String(
-              Number(quotations.itemPrice).toFixed(2) *
-                Number(exchangeRate).toFixed(2)
+              Number(quotations.itemPrice).toFixed(5) *
+                Number(exchangeRate).toFixed(5)
             )
           )[0].displayNum
   }));
@@ -95,29 +95,29 @@ export const calculateDollarStorageExchangeRate = exchangeRate => {
     itemPrice:
       JSnumberToWordProcessor(
         String(
-          Number(quotations.itemPrice).toFixed(2) /
-            Number(exchangeRate).toFixed(2)
+          Number(quotations.itemPrice).toFixed(5) /
+            Number(exchangeRate).toFixed(5)
         )
       ).length === 2
         ? JSnumberToWordProcessor(
             String(
-              Number(quotations.itemPrice).toFixed(2) /
-                Number(exchangeRate).toFixed(2)
+              Number(quotations.itemPrice).toFixed(5) /
+                Number(exchangeRate).toFixed(5)
             )
           )[0].displayNum +
           "." +
           JSnumberToWordProcessor(
             String(
               (
-                Number(quotations.itemPrice).toFixed(2) /
-                Number(exchangeRate).toFixed(2)
-              ).toFixed(2) // toFixed(2) here to format decimal
+                Number(quotations.itemPrice).toFixed(5) /
+                Number(exchangeRate).toFixed(5)
+              ).toFixed(5) // toFixed(2) here to format decimal
             )
           )[1].displayNum
         : JSnumberToWordProcessor(
             String(
-              Number(quotations.itemPrice).toFixed(2) /
-                Number(exchangeRate).toFixed(2)
+              Number(quotations.itemPrice).toFixed(5) /
+                Number(exchangeRate).toFixed()
             )
           )[0].displayNum
   }));

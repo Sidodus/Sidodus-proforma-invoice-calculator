@@ -76,8 +76,6 @@ export const clearAllStorageQuotations = () => {
 
 export const addStorageProformaInvoice = proforma => {
   localStorage.setItem("proforma_invoice", JSON.stringify(proforma));
-
-  // return proforma;
 };
 
 export const updateStorageQuotation = newTask => {

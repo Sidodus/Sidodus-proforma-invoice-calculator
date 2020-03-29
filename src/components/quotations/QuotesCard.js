@@ -68,7 +68,7 @@ class QuotesCard extends Component {
       document.getElementById("clearInvoice").style.display = "block";
     }
 
-    const totalJobUnit = Number(props.proformaInvoice.totalJobUnit).toFixed(2);
+    const totalJobUnit = Number(props.proformaInvoice.totalJobUnit).toFixed();
     const totalJobUnit0 = JSnumberToWordProcessor(String(totalJobUnit))[0];
     const totalJobUnit1 = JSnumberToWordProcessor(String(totalJobUnit))[1];
 
@@ -80,7 +80,7 @@ class QuotesCard extends Component {
 
     const totalQuoteAmount = Number(
       props.proformaInvoice.totalQuoteAmount
-    ).toFixed(2);
+    ).toFixed(5);
     const totalQuoteAmount0 = JSnumberToWordProcessor(
       String(totalQuoteAmount)
     )[0];
@@ -95,7 +95,7 @@ class QuotesCard extends Component {
     const chargesPercentage = (
       (Number(props.proformaInvoice.serviceCharge) / 100) *
       Number(props.proformaInvoice.totalQuoteAmount)
-    ).toFixed(2);
+    ).toFixed(5);
     const chargesPercentage0 = JSnumberToWordProcessor(
       String(chargesPercentage)
     )[0];
@@ -105,20 +105,20 @@ class QuotesCard extends Component {
 
     const totalValue = (
       Number(props.proformaInvoice.totalQuoteAmount) + Number(chargesPercentage)
-    ).toFixed(2);
+    ).toFixed(5);
     const totalValue0 = JSnumberToWordProcessor(String(totalValue))[0];
     const totalValue1 = JSnumberToWordProcessor(String(totalValue))[1];
 
     const vatPayable = (
       (Number(props.proformaInvoice.vat) / 100) *
       Number(totalValue)
-    ).toFixed(2);
+    ).toFixed(5);
     const vatPayable0 = JSnumberToWordProcessor(String(vatPayable))[0];
     const vatPayable1 = JSnumberToWordProcessor(String(vatPayable))[1];
 
     const totalPayableWithVat = (
       Number(totalValue) + Number(vatPayable)
-    ).toFixed(2);
+    ).toFixed(5);
     const totalPayableWithVat0 = JSnumberToWordProcessor(
       String(totalPayableWithVat)
     )[0];
@@ -128,7 +128,7 @@ class QuotesCard extends Component {
 
     let unitPrice = (
       Number(totalPayableWithVat) / Number(props.proformaInvoice.totalJobUnit)
-    ).toFixed(2);
+    ).toFixed(5);
     if (isNaN(unitPrice)) {
       unitPrice = "0.00";
     }
@@ -138,7 +138,7 @@ class QuotesCard extends Component {
     let unit1000Price = Number(
       Number(totalPayableWithVat / Number(props.proformaInvoice.totalJobUnit)) *
         1000
-    ).toFixed(2);
+    ).toFixed(5);
     if (isNaN(unit1000Price)) {
       unit1000Price = "0.00";
     }
@@ -256,13 +256,9 @@ class QuotesCard extends Component {
 
       totalJobUnit,
       totalJobUnit0,
-      // totalJobUnit1,
       serviceCharge,
       serviceCharge0,
       serviceCharge1,
-      // totalQuoteAmount,
-      // totalQuoteAmount0,
-      // totalQuoteAmount1,
       vat,
       vat0,
       vat1,
@@ -281,7 +277,6 @@ class QuotesCard extends Component {
       unitPrice,
       unitPrice0,
       unitPrice1,
-      // unit1000Price,
       unit1000Price0,
       unit1000Price1
     } = this.state;
@@ -334,7 +329,7 @@ class QuotesCard extends Component {
                     ? null
                     : storageCurrency.sign + totalValue0.displayNum + "."}
                   {Number(totalValue) === 0 ? null : (
-                    <small>{totalValue1.displayNum}</small>
+                    <small>{totalValue1.newDecimalNum}</small>
                   )}
                 </td>
               </tr>
@@ -354,7 +349,7 @@ class QuotesCard extends Component {
                     ? null
                     : storageCurrency.sign + vatPayable0.displayNum + "."}
                   {Number(vatPayable) === 0 ? null : (
-                    <small>{vatPayable1.displayNum}</small>
+                    <small>{vatPayable1.newDecimalNum}</small>
                   )}
                 </td>
               </tr>
@@ -371,7 +366,7 @@ class QuotesCard extends Component {
                     : storageCurrency.sign + unitPrice0.displayNum + "."}
                   {Number(unitPrice) === Infinity ||
                   Number(unitPrice) === 0 ? null : (
-                    <small>{unitPrice1.displayNum}</small>
+                    <small>{unitPrice1.newDecimalNum}</small>
                   )}
                 </td>
                 <td>
@@ -381,7 +376,7 @@ class QuotesCard extends Component {
                       totalPayableWithVat0.displayNum +
                       "."}
                   {Number(totalPayableWithVat) === 0 ? null : (
-                    <small>{totalPayableWithVat1.displayNum}</small>
+                    <small>{totalPayableWithVat1.newDecimalNum}</small>
                   )}
                 </td>
               </tr>
@@ -416,7 +411,7 @@ class QuotesCard extends Component {
                       chargesPercentage0.displayNum +
                       "."}
                   {Number(chargesPercentage) === 0 ? null : (
-                    <small>{chargesPercentage1.displayNum}</small>
+                    <small>{chargesPercentage1.newDecimalNum}</small>
                   )}
                 </td>
               </tr>
@@ -449,14 +444,21 @@ class QuotesCard extends Component {
                 {totalJobUnit0.displayNum} pcs of {lpoItemName} @{" "}
                 {storageCurrency.sign}
                 {unitPrice0.displayNum + "."}
-                <small>{unitPrice1.displayNum}</small>
-                {" (" + unitPrice0.displayWord + " " + storageCurrency.senior}
-                {Number(unitPrice1.displayNum) === 0
+                <small>{unitPrice1.newDecimalNum}</small>
+                {Number(unitPrice0.displayNum) === 0
                   ? null
-                  : ", and " +
-                    unitPrice1.displayWord +
+                  : " (" +
+                    unitPrice0.displayWord +
                     " " +
-                    storageCurrency.junior}
+                    storageCurrency.senior}
+                {Number(unitPrice0.displayNum) === 0
+                  ? " ("
+                  : Number(unitPrice1.newDecimalNum) === 0
+                  ? null
+                  : ", and "}
+                {Number(unitPrice1.newDecimalNum) === 0
+                  ? null
+                  : unitPrice1.newDecimalWord + " " + storageCurrency.junior}
                 ) each.
               </li>
             </ul>
@@ -467,15 +469,21 @@ class QuotesCard extends Component {
                 {totalJobUnit0.displayNum} pcs of {lpoItemName} @{" "}
                 {storageCurrency.sign}
                 {unit1000Price0.displayNum + "."}
-                <small>{unit1000Price1.displayNum}</small>
-                {" (" +
-                  unit1000Price0.displayWord +
-                  " " +
-                  storageCurrency.senior}
-                {Number(unit1000Price1.displayNum) === 0
+                <small>{unit1000Price1.newDecimalNum}</small>
+                {Number(unit1000Price0.displayNum) === 0
                   ? null
-                  : ", and " +
-                    unit1000Price1.displayWord +
+                  : " (" +
+                    unit1000Price0.displayWord +
+                    " " +
+                    storageCurrency.senior}
+                {Number(unit1000Price0.displayNum) === 0
+                  ? " ("
+                  : Number(unit1000Price1.newDecimalNum) === 0
+                  ? null
+                  : ", and "}
+                {Number(unit1000Price1.newDecimalNum) === 0
+                  ? null
+                  : unit1000Price1.newDecimalWord +
                     " " +
                     storageCurrency.junior}
                 ) per 1000 units.
@@ -488,15 +496,21 @@ class QuotesCard extends Component {
                 {totalJobUnit0.displayNum} pcs of {lpoItemName} @{" "}
                 {storageCurrency.sign}
                 {totalPayableWithVat0.displayNum + "."}
-                <small>{totalPayableWithVat1.displayNum}</small>
-                {" (" +
-                  totalPayableWithVat0.displayWord +
-                  " " +
-                  storageCurrency.senior}
-                {Number(totalPayableWithVat1.displayNum) === 0
+                <small>{totalPayableWithVat1.newDecimalNum}</small>
+                {Number(totalPayableWithVat0.displayNum) === 0
                   ? null
-                  : ", and " +
-                    totalPayableWithVat1.displayWord +
+                  : " (" +
+                    totalPayableWithVat0.displayWord +
+                    " " +
+                    storageCurrency.senior}
+                {Number(totalPayableWithVat0.displayNum) === 0
+                  ? " ("
+                  : Number(totalPayableWithVat1.newDecimalNum) === 0
+                  ? null
+                  : ", and "}
+                {Number(totalPayableWithVat1.newDecimalNum) === 0
+                  ? null
+                  : totalPayableWithVat1.newDecimalWord +
                     " " +
                     storageCurrency.junior +
                     ")."}{" "}
@@ -509,15 +523,21 @@ class QuotesCard extends Component {
                 {totalJobUnit0.displayNum} pcs of {lpoItemName} @{" "}
                 {storageCurrency.sign}
                 {totalPayableWithVat0.displayNum + "."}
-                <small>{totalPayableWithVat1.displayNum}</small>
-                {" (" +
-                  totalPayableWithVat0.displayWord +
-                  " " +
-                  storageCurrency.senior}
-                {Number(totalPayableWithVat1.displayNum) === 0
+                <small>{totalPayableWithVat1.newDecimalNum}</small>
+                {Number(totalPayableWithVat0.displayNum) === 0
                   ? null
-                  : ", and " +
-                    totalPayableWithVat1.displayWord +
+                  : " (" +
+                    totalPayableWithVat0.displayWord +
+                    " " +
+                    storageCurrency.senior}
+                {Number(totalPayableWithVat0.displayNum) === 0
+                  ? " ("
+                  : Number(totalPayableWithVat1.newDecimalNum) === 0
+                  ? null
+                  : ", and "}
+                {Number(totalPayableWithVat1.newDecimalNum) === 0
+                  ? null
+                  : totalPayableWithVat1.newDecimalWord +
                     " " +
                     storageCurrency.junior}
                 ). <br />
@@ -525,15 +545,21 @@ class QuotesCard extends Component {
                 <span className="h4 text-success">PROFIT</span> <hr />
                 {storageCurrency.sign}
                 {chargesPercentage0.displayNum + "."}
-                <small>{chargesPercentage1.displayNum}</small>
-                {" (" +
-                  chargesPercentage0.displayWord +
-                  " " +
-                  storageCurrency.senior}
-                {Number(chargesPercentage1.displayNum) === 0
+                <small>{chargesPercentage1.newDecimalNum}</small>
+                {Number(chargesPercentage0.displayNum) === 0
                   ? null
-                  : ", and " +
-                    chargesPercentage1.displayWord +
+                  : " (" +
+                    chargesPercentage0.displayWord +
+                    " " +
+                    storageCurrency.senior}
+                {Number(chargesPercentage0.displayNum) === 0
+                  ? " ("
+                  : Number(chargesPercentage1.newDecimalNum) === 0
+                  ? null
+                  : ", and "}
+                {Number(chargesPercentage1.newDecimalNum) === 0
+                  ? null
+                  : chargesPercentage1.newDecimalWord +
                     " " +
                     storageCurrency.junior}
                 ).{" "}

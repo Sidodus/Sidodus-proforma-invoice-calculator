@@ -1,6 +1,5 @@
 import React from "react";
 
-// import uuid from "uuid";
 import { v4 as uuid } from "uuid";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -126,39 +125,44 @@ class Form extends React.Component {
   valueSubmited = e => {
     e.preventDefault();
 
-    // Save Init Currency On 1st Expense Save
-    // To Be Used To Manage (Set Exchange Rate)
-    if (JSON.parse(localStorage.getItem("quotations")).length === 0) {
-      const initCurrency = JSON.parse(localStorage.getItem("currency")).senior;
-
-      localStorage.setItem("initCurrency", JSON.stringify(initCurrency));
-    }
-
     let { itemName, itemDescription, itemUnit, itemPrice } = this.state;
 
-    // Set itemUnit Default Value
-    if (itemUnit === "") {
-      itemUnit = "1";
+    if (isNaN(itemPrice)) {
+      alert("Enter A Valid Number As Item Amount");
+    } else {
+      // Save Init Currency On 1st Expense Save
+      // To Be Used To Manage (Set Exchange Rate)
+      if (JSON.parse(localStorage.getItem("quotations")).length === 0) {
+        const initCurrency = JSON.parse(localStorage.getItem("currency"))
+          .senior;
+
+        localStorage.setItem("initCurrency", JSON.stringify(initCurrency));
+      }
+
+      // Set itemUnit Default Value
+      if (itemUnit === "") {
+        itemUnit = "1";
+      }
+
+      const newQuotationItem = {
+        id: uuid(),
+        itemName,
+        itemDescription,
+        itemUnit,
+        itemPrice
+      };
+
+      this.setState({
+        itemName: "",
+        itemDescription: "",
+        itemUnit: "",
+        itemPrice: ""
+      });
+
+      this.props.addQuotation(newQuotationItem);
+
+      document.getElementById("clearAllInvoice").style.display = "block";
     }
-
-    const newQuotationItem = {
-      id: uuid(),
-      itemName,
-      itemDescription,
-      itemUnit,
-      itemPrice
-    };
-
-    this.setState({
-      itemName: "",
-      itemDescription: "",
-      itemUnit: "",
-      itemPrice: ""
-    });
-
-    this.props.addQuotation(newQuotationItem);
-
-    document.getElementById("clearAllInvoice").style.display = "block";
   };
 
   toggleForm = () => {
@@ -240,7 +244,8 @@ class Form extends React.Component {
           </div>
           <input
             required
-            type="number"
+            type="text"
+            // type="number"
             name="itemPrice"
             className="form-control"
             placeholder={"Enter Amount In " + currencySenior}

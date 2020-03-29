@@ -23,37 +23,41 @@ class Form2 extends React.Component {
 
     let { lpoItemName, totalJobUnit, serviceCharge, vat } = this.state;
 
-    const quotations = getStorageQuotations();
-
-    // Only Run If There Are Expences
-    if (quotations.length !== 0) {
-      const totalQuoteAmount = quotations
-        .map(quotation => Number(quotation.itemUnit * quotation.itemPrice))
-        .reduce((acc, value) => acc + value);
-
-      const proformaInvioce = {
-        totalQuoteAmount: Number(totalQuoteAmount),
-        lpoItemName,
-        totalJobUnit: Number(totalJobUnit),
-        serviceCharge: Number(serviceCharge),
-        vat: Number(vat)
-      };
-
-      this.props.addProformaInvoice(proformaInvioce);
-
-      this.setState({
-        lpoItemName: "",
-        totalJobUnit: "",
-        serviceCharge: "",
-        vat: ""
-      });
-      // Show Clear Invoice & Recaculate BTN
-      document.getElementById("clearInvoice").style.display = "block";
-      document.getElementById("recaculateInvoice").style.display = "block";
-      // Close Form
-      document.getElementById("generateInvoice").click();
+    if (isNaN(vat)) {
+      alert("Enter A Valid VAT Number");
     } else {
-      alert("You  Must Enter At Least 1 Expense In (STEP 1)");
+      const quotations = getStorageQuotations();
+
+      // Only Run If There Are Expences
+      if (quotations.length !== 0) {
+        const totalQuoteAmount = quotations
+          .map(quotation => Number(quotation.itemUnit * quotation.itemPrice))
+          .reduce((acc, value) => acc + value);
+
+        const proformaInvioce = {
+          totalQuoteAmount: Number(totalQuoteAmount),
+          lpoItemName,
+          totalJobUnit: Number(totalJobUnit),
+          serviceCharge: Number(serviceCharge),
+          vat: Number(vat)
+        };
+
+        this.props.addProformaInvoice(proformaInvioce);
+
+        this.setState({
+          lpoItemName: "",
+          totalJobUnit: "",
+          serviceCharge: "",
+          vat: ""
+        });
+        // Show Clear Invoice & Recaculate BTN
+        document.getElementById("clearInvoice").style.display = "block";
+        document.getElementById("recaculateInvoice").style.display = "block";
+        // Close Form
+        document.getElementById("generateInvoice").click();
+      } else {
+        alert("You  Must Enter At Least 1 Expense In (STEP 1)");
+      }
     }
   };
 
@@ -133,7 +137,7 @@ class Form2 extends React.Component {
             <span className="input-group-text">{inputGroupText1}</span>
           </div>
           <input
-            type="number"
+            type="text"
             name="vat"
             className="form-control"
             placeholder={placeholder1}
