@@ -1,12 +1,6 @@
 <h1>PROFORMA <span style="color: blue;">INVOICE</span> CALCULATOR</h1>
     <h6 style="color: blue;">version 2.0.0</h6>
 
-<h1 align="center">
-<a href="https://github.com/Sidodus/Sidodus-proforma-invoice-calculator/blob/master/screenshot/sido1.png" style="margin-right: 5px"><img src="./screenshot/sido1.png" alt='Screenshot 1' width="150"/></a>
-<a href="./screenshot/sido2.png" style="margin-right: 5px"><img src="./screenshot/sido2.png" alt='Screenshot 1'alt='Screenshot 2' width="150"/></a>
-<a href="./screenshot/sido3.png" style="margin-right: 5px"><img src="./screenshot/sido3.png" alt='Screenshot 3' width="150"/></a>
-</h1>
-
 <blockquote align="center">
     <em>Proforma Invoice Calculator</em> is an invoice calculator which
     calculates how much should be charged per project in just 2 STEPS
