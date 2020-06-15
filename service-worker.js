@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sidodus-proforma-invoice-calculator/precache-manifest.6b050a23cf4c40ef898a8ed393f87d9b.js"
+  "/Sidodus-proforma-invoice-calculator/precache-manifest.d63cc602405bb1657df6b588e9172c8c.js"
 );
 
 self.addEventListener('message', (event) => {
