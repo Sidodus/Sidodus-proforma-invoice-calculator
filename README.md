@@ -1,18 +1,18 @@
-<h1>PROFORMA <span style="color: blue;">INVOICE</span> CALCULATOR</h1>
-<h6 style="color: blue; margin-top: -1rem;"><em>Version 3.0.0</em></h6>
+<h1>PROFORMA <span style="color: blue;">INVOICE</span> CALCULATOR 👍</h1>
+<h6 style="color: blue; margin-top: -1rem;"><em>Version 3.0.1</em></h6>
 
 <div align="center">
-  <a href="./screenshot/V3.0.0-Update-Screenshot/sido1.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.0-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
+  <a href="./screenshot/V3.0.1-Update-Screenshot/sido1.png" style="margin-right: 5px;">
+    <img src="./screenshot/V3.0.1-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
   </a>
-  <a href="./screenshot/V3.0.0-Update-Screenshot/sido2.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.0-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
+  <a href="./screenshot/V3.0.1-Update-Screenshot/sido2.png" style="margin-right: 5px;">
+    <img src="./screenshot/V3.0.1-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
   </a>
-  <a href="./screenshot/V3.0.0-Update-Screenshot/sido3.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.0-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
+  <a href="./screenshot/V3.0.1-Update-Screenshot/sido3.png" style="margin-right: 5px;">
+    <img src="./screenshot/V3.0.1-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
   </a>
-  <a href="./screenshot/V3.0.0-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.0-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  <a href="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
+    <img src="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
   </a>
 </div>
 
@@ -39,6 +39,16 @@
       exchange rate is set at ₦365 to $1).
     </li>
   </ul>
+</ol>
+
+<h4>UPDATE</h4>
+<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 3.0.1</em></h6>
+<ol>
+  <li>Perfected VAT calculation to equal (=) "VAT % * (Total Value - Discount)".</li>
+  <ul style="list-style-type: disc">
+    <li>VAT calculation now considers discounted amount during calculation. This means discount given would be deducted from total value before VAT is calculated. This is because discount on job would reduce the Total Proforma Invoice Amount and VAT should only be calculated on the invoice total value.</li>
+  </ul>
+  <li>Improved Formula Presentation.</li>
 </ol>
 
 <h4>UPDATE</h4>
@@ -144,4 +154,4 @@ Calculator](https://sidodus.github.io/Sidodus-proforma-invoice-calculator/)
 > Proforma Invoice Calculator is Developed By Saheed Odulaja During A
 > React/Redux Practice Exercise. > Feel Free To Fork This Repository as There Is
 > Always Room For Improvement. > Also Be Kind Enough To Leave A STAR As A Mark Of
-> Encouragement :)
+> Encouragement 😃
