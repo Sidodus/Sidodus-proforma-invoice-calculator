@@ -1,25 +1,39 @@
 <h1>PROFORMA <span style="color: blue;">INVOICE</span> CALCULATOR 👍</h1>
-<h6 style="color: blue; margin-top: -1rem;"><em>Version 3.0.1</em></h6>
+<h6 style="color: blue; margin-top: -1rem;"><em>Version 4.0.0</em></h6>
 
 <div align="center">
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido1.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido1.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido2.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido2.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido3.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido3.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  </a>
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido5.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido5.png" alt="Screenshot 4" width="150" />
   </a>
 </div>
 
 <blockquote align="center">
   <em>Proforma Invoice Calculator</em> is an invoice calculator which calculates
-  how much should be charged per project in just 2 STEPS.
+  how much should be charged per project in JUST 2 STEPS.
 </blockquote>
+
+<hr />
+<h3 align="center" color="gray">
+<ins>NOTE</ins>:
+<br /> 
+<ul>
+  <li>All Future Codes Updates From Version 2.0.0 Are Now Private</li>
+  <li>Application Is Still Free To Use At <a href="https://sidodus.github.io/Sidodus-proforma-invoice-calculator/">Proforma Invoice Calculator<a/></li>
+</ul>
+</h3>
+<hr/>
 
 <h2 align="center">USAGE...</h2>
 
@@ -38,6 +52,15 @@
       Users Can Also Set An Exchange Rate Value Between NGN & USD (default
       exchange rate is set at ₦365 to $1).
     </li>
+  </ul>
+</ol>
+
+<h4>UPDATE</h4>
+<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 4.0.0</em></h6>
+<ol>
+  <li>Introduced Saving Of Processed Proforma Invoice To Storage.</li>
+  <ul style="list-style-type: disc">
+    <li>Saved Proforma Invoice Can Be Pulled From Storage Back To Application Home Page.</li>
   </ul>
 </ol>
 
