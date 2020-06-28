@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Sidodus-proforma-invoice-calculator/static/css/main.26f34fbd.chunk.css",
-    "main.js": "/Sidodus-proforma-invoice-calculator/static/js/main.1970dea5.chunk.js",
-    "main.js.map": "/Sidodus-proforma-invoice-calculator/static/js/main.1970dea5.chunk.js.map",
+    "main.css": "/Sidodus-proforma-invoice-calculator/static/css/main.5ec4cc24.chunk.css",
+    "main.js": "/Sidodus-proforma-invoice-calculator/static/js/main.09947be1.chunk.js",
+    "main.js.map": "/Sidodus-proforma-invoice-calculator/static/js/main.09947be1.chunk.js.map",
     "runtime-main.js": "/Sidodus-proforma-invoice-calculator/static/js/runtime-main.b2652480.js",
     "runtime-main.js.map": "/Sidodus-proforma-invoice-calculator/static/js/runtime-main.b2652480.js.map",
-    "static/css/2.de424728.chunk.css": "/Sidodus-proforma-invoice-calculator/static/css/2.de424728.chunk.css",
-    "static/js/2.4159a141.chunk.js": "/Sidodus-proforma-invoice-calculator/static/js/2.4159a141.chunk.js",
-    "static/js/2.4159a141.chunk.js.map": "/Sidodus-proforma-invoice-calculator/static/js/2.4159a141.chunk.js.map",
+    "static/css/2.9d6f4434.chunk.css": "/Sidodus-proforma-invoice-calculator/static/css/2.9d6f4434.chunk.css",
+    "static/js/2.2fe00fd6.chunk.js": "/Sidodus-proforma-invoice-calculator/static/js/2.2fe00fd6.chunk.js",
+    "static/js/2.2fe00fd6.chunk.js.map": "/Sidodus-proforma-invoice-calculator/static/js/2.2fe00fd6.chunk.js.map",
     "index.html": "/Sidodus-proforma-invoice-calculator/index.html",
-    "precache-manifest.eee45cabedae72d9c8662b2c9102a339.js": "/Sidodus-proforma-invoice-calculator/precache-manifest.eee45cabedae72d9c8662b2c9102a339.js",
+    "precache-manifest.52d8c5c042987a1cf78576a5f82a5459.js": "/Sidodus-proforma-invoice-calculator/precache-manifest.52d8c5c042987a1cf78576a5f82a5459.js",
     "service-worker.js": "/Sidodus-proforma-invoice-calculator/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/Sidodus-proforma-invoice-calculator/static/css/2.de424728.chunk.css.map",
-    "static/css/main.26f34fbd.chunk.css.map": "/Sidodus-proforma-invoice-calculator/static/css/main.26f34fbd.chunk.css.map",
-    "static/js/2.4159a141.chunk.js.LICENSE.txt": "/Sidodus-proforma-invoice-calculator/static/js/2.4159a141.chunk.js.LICENSE.txt",
+    "static/css/2.9d6f4434.chunk.css.map": "/Sidodus-proforma-invoice-calculator/static/css/2.9d6f4434.chunk.css.map",
+    "static/css/main.5ec4cc24.chunk.css.map": "/Sidodus-proforma-invoice-calculator/static/css/main.5ec4cc24.chunk.css.map",
+    "static/js/2.2fe00fd6.chunk.js.LICENSE.txt": "/Sidodus-proforma-invoice-calculator/static/js/2.2fe00fd6.chunk.js.LICENSE.txt",
     "static/media/all.css": "/Sidodus-proforma-invoice-calculator/static/media/fa-solid-900.e245d7d6.woff2",
     "static/media/App.css": "/Sidodus-proforma-invoice-calculator/static/media/usFlag.8106443d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b2652480.js",
-    "static/css/2.de424728.chunk.css",
-    "static/js/2.4159a141.chunk.js",
-    "static/css/main.26f34fbd.chunk.css",
-    "static/js/main.1970dea5.chunk.js"
+    "static/css/2.9d6f4434.chunk.css",
+    "static/js/2.2fe00fd6.chunk.js",
+    "static/css/main.5ec4cc24.chunk.css",
+    "static/js/main.09947be1.chunk.js"
   ]
 }
