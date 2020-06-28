@@ -1,66 +1,31 @@
-version 1.1.0
-
-<h1 align="center">
-  <a href="./screenshot/sido1.png" style="margin-right: 5px"><img src="./screenshot/sido1.png" alt='Screenshot 1' width="150"/></a>
-  <a href="./screenshot/sido2.png" style="margin-right: 5px"><img src="./screenshot/sido2.png" alt='Screenshot 1'alt='Screenshot 2' width="150"/></a>
-  <a href="./screenshot/sido3.png" style="margin-right: 5px"><img src="./screenshot/sido3.png" alt='Screenshot 3' width="150"/></a>  
-</h1>
-
-<blockquote align="center">
-    <em>Proforma Invoice Calculator</em> is an invoice calculator which calculates how much should be charged per project in just 2 STEPS
-</blockquote>
-
-# UPDATE
-
-- \*). Improved calculation algorithm
-- \*). Changed background calculation algorithm to 5 decimal numbers instead of the initial 2 decimal. e.g. 38.27448 instead of 38.27
-- \*). Number output is still in 2 decimal place but with better accuracy. e.g. ₦38.28 instead of ₦38.27
-
-# USAGE...
-
-# Calculate Your Invoice In 2 Steps
-
-- \1). Input All Expences Through Step 1
-- \2). Input The Invoice Details In Step 2
-- \3). Thats all & You See The Magic.
-
-- \*). Applicatiion Is Optimised With Nigerian Naira ([NGN] ₦) & US Dollar ([USD] \$)
-- \*). Users Can Also Set An Exchange Rate Value Btween NGN & USD (default exchange rate is set at ₦365 to \$1)
-
-See Proforma Invoice Calculator At Work Here [Proforma Invoice Calculator](https://sidodus.github.io/Sidodus-proforma-invoice-calculator/)
-
-Created With React.js & Redux State Management:
-
-> Proforma Invoice Calculator is Developed By Saheed Odulaja During A React / Redux Practice Session.
-> Feel Free To Fork This Repository as There Is Always Room For Improvement.
-> Also Be Kind Enough To Leave A STAR As A Mark Of Encouragement :)
-> =======
-
 <h1>PROFORMA <span style="color: blue;">INVOICE</span> CALCULATOR 👍</h1>
 <h6 style="color: blue; margin-top: -1rem;"><em>Version 3.0.1</em></h6>
 
 <div align="center">
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido1.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido1.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido1.png" alt="Screenshot 1" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido2.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido2.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido2.png" alt="Screenshot 2" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido3.png" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido3.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
   </a>
-  <a href="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
-    <img src="./screenshot/V3.0.1-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  </a>
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido5.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido5.png" alt="Screenshot 4" width="150" />
   </a>
 </div>
 
 <blockquote align="center">
   <em>Proforma Invoice Calculator</em> is an invoice calculator which calculates
-  how much should be charged per project in just 2 STEPS.
+  how much should be charged per project in JUST 2 STEPS.
 </blockquote>
 
 <hr />
-<h3 align="center" style="color = 'gray'">
+<h3 align="center" color="gray">
 <ins>NOTE</ins>:
 <br /> 
 <ul>
@@ -87,6 +52,15 @@ Created With React.js & Redux State Management:
       Users Can Also Set An Exchange Rate Value Between NGN & USD (default
       exchange rate is set at ₦365 to $1).
     </li>
+  </ul>
+</ol>
+
+<h4>UPDATE</h4>
+<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 4.0.0</em></h6>
+<ol>
+  <li>Introduced Saving Of Processed Proforma Invoice To Storage.</li>
+  <ul style="list-style-type: disc">
+    <li>Saved Proforma Invoice Can Be Pulled From Storage Back To Application Home Page.</li>
   </ul>
 </ol>
 
