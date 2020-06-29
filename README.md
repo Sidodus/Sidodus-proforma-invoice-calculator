@@ -11,13 +11,15 @@
   <a href="./screenshot/V4.0.0-Update-Screenshot/sido3.png" style="margin-right: 5px;">
     <img src="./screenshot/V4.0.0-Update-Screenshot/sido3.png" alt="Screenshot 3" width="150" />
   </a>
-  <a href="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" style="margin-right: 5px;">
-    <img src="./screenshot/V4.0.0-Update-Screenshot/sido4.PNG" alt="Screenshot 4" width="150" />
+  <a href="./screenshot/V4.0.0-Update-Screenshot/sido4.png" style="margin-right: 5px;">
+    <img src="./screenshot/V4.0.0-Update-Screenshot/sido4.png" alt="Screenshot 4" width="150" />
   </a>
   <a href="./screenshot/V4.0.0-Update-Screenshot/sido5.png" style="margin-right: 5px;">
     <img src="./screenshot/V4.0.0-Update-Screenshot/sido5.png" alt="Screenshot 4" width="150" />
   </a>
 </div>
+
+<br />
 
 <blockquote align="center">
   <em>Proforma Invoice Calculator</em> is an invoice calculator which calculates
@@ -55,8 +57,8 @@
   </ul>
 </ol>
 
-<h4>UPDATE</h4>
-<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 4.0.0</em></h6>
+<h4><ins>UPDATE</ins></h4>
+<em>Version: 4.0.0</em>
 <ol>
   <li>Introduced Saving Of Processed Proforma Invoice To Storage.</li>
   <ul style="list-style-type: disc">
@@ -64,8 +66,8 @@
   </ul>
 </ol>
 
-<h4>UPDATE</h4>
-<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 3.0.1</em></h6>
+<h4><ins>UPDATE</ins></h4>
+<em>Version: 3.0.1</em>
 <ol>
   <li>Perfected VAT calculation to equal (=) "VAT % * (Total Value - Discount)".</li>
   <ul style="list-style-type: disc">
@@ -74,8 +76,8 @@
   <li>Improved Formula Presentation.</li>
 </ol>
 
-<h4>UPDATE</h4>
-<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 3.0.0</em></h6>
+<h4><ins>UPDATE</ins></h4>
+<em>Version: 3.0.0</em>
 <ol>
   <li>Introduced Discount Option.</li>
   <ul style="list-style-type: disc">
@@ -90,8 +92,8 @@
     </ul>
 </ol>
 
-<h4>UPDATE</h4>
-<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 2.0.0</em></h6>
+<h4><ins>UPDATE</ins></h4>
+<em>Version: 2.0.0</em>
 
 <ol type="i">
   <li>Perfected the calculation algorithm.</li>
@@ -154,8 +156,8 @@
   <li>Improved User Experience (UX).</li>
 </ol>
 
-<h4>UPDATE</h4>
-<h6 style="color: blue; margin-top: -0.7rem;"><em>Version: 1.1.0</em></h6>
+<h4><ins>UPDATE</ins></h4>
+<em>Version: 1.1.0</em>
 
 <ol>
   <li>Improved calculation algorithm.</li>
