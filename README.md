@@ -58,7 +58,7 @@
 </ol>
 
 <h4><ins>UPDATE</ins></h4>
-<em>Version: 4.0.0</em>
+<h6 margin-bottom="-3px"><em>Version: 4.0.0</em></h6>
 <ol>
   <li>Introduced Saving Of Processed Proforma Invoice To Storage.</li>
   <ul style="list-style-type: disc">
@@ -67,7 +67,7 @@
 </ol>
 
 <h4><ins>UPDATE</ins></h4>
-<em>Version: 3.0.1</em>
+<h6 margin-bottom="-3px"><em>Version: 3.0.1</em></h6>
 <ol>
   <li>Perfected VAT calculation to equal (=) "VAT % * (Total Value - Discount)".</li>
   <ul style="list-style-type: disc">
@@ -77,7 +77,7 @@
 </ol>
 
 <h4><ins>UPDATE</ins></h4>
-<em>Version: 3.0.0</em>
+<h6 margin-bottom="-3px"><em>Version: 3.0.0</em></h6>
 <ol>
   <li>Introduced Discount Option.</li>
   <ul style="list-style-type: disc">
@@ -93,7 +93,7 @@
 </ol>
 
 <h4><ins>UPDATE</ins></h4>
-<em>Version: 2.0.0</em>
+<h6 margin-bottom="-3px"><em>Version: 2.0.0</em></h6>
 
 <ol type="i">
   <li>Perfected the calculation algorithm.</li>
@@ -157,7 +157,7 @@
 </ol>
 
 <h4><ins>UPDATE</ins></h4>
-<em>Version: 1.1.0</em>
+<h6 margin-bottom="-3px"><em>Version: 1.1.0</em></h6>
 
 <ol>
   <li>Improved calculation algorithm.</li>
