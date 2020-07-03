@@ -14,7 +14,7 @@
   </a> 
 </div>
 
-<hr align="center" width="50%" />
+<span align="center"><hr width="60%" /></span>
 
 <div align="center">
   <a href="./screenshot/V4.1.0-Update-Screenshot/sido1.png" style="margin-right: 5px;">
